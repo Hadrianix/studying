@@ -57,31 +57,63 @@
 // }
 
 
-var slideIndex = 1;
-showSlides(slideIndex);
+// var slideIndex = 1;
+// showSlides(slideIndex);
 
-// Next/previous controls
-function previous(n) {
-  showSlides(slideIndex += n);
+// // Next/previous controls
+// function previous(n) {
+//   showSlides(slideIndex += n);
+// }
+
+// // Thumbnail image controls
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
+
+// function showSlides(n) {
+//   var i;
+//   var slides = document.getElementsByClassName("slides");
+//   var dots = document.getElementsByClassName("dot");
+//   if (n > slides.length) {slideIndex = 1} 
+//   if (n < 1) {slideIndex = slides.length}
+//   for (i = 0; i < slides.length; i++) {
+//       slides[i].style.display = "none"; 
+//   }
+//   for (i = 0; i < dots.length; i++) {
+//       dots[i].className = dots[i].className.replace(" active", "");
+//   }
+//   slides[slideIndex-1].style.display = "block"; 
+//   dots[slideIndex-1].className += " active";
+// }
+
+var sliderStuff = document.getElementById('slides');
+
+var images = [
+    'a',
+    'b',
+    'c',
+    'd',
+    
+];
+
+var i = images.length;
+
+function nextImage() {
+    if (i < images.length) {
+        i = i+1;
+    }else {
+        i = 1;
+    }
+    sliderStuff.innerHTML = "<img src="+images[i-1]+".jpeg>";
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function prevImage() {
+    if (i<images.length+1 && i>i) {
+        i = 1-1;
+    }else {
+        i=1;
+    }
+    sliderStuff.innerHTML = "<img src="+images[i-1]+".jpeg>";
 }
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("slides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1} 
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"; 
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block"; 
-  dots[slideIndex-1].className += " active";
-}
+var slideCounter = setInterval(nextImage, 30000);
