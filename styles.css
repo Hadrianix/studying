@@ -4,6 +4,21 @@
     
 }
 
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Navbar links */
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+
 img {
     width: 1000px;
     height: 500px;
@@ -12,7 +27,7 @@ img {
 .hero {
     width: 1000px;
     height: 500px;
-    margin: 20px auto;
+    margin: 0 auto;
     position: relative;
 }
 
@@ -27,12 +42,20 @@ button {
 }
 
 .next {
+    transition: 0.6s ease;
+    cursor: pointer;
     border-radius: 10px 0px 0px 10px;
     margin-left: 935px;
 }
 
 .prev {
+    cursor: pointer;
     border-radius: 0px 10px 10px 0px;
 
 
+}
+.box {
+    height: 2000px;
+    width: 500px;
+    background-color: red; 
 }
